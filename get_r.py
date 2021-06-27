@@ -263,30 +263,18 @@ def annotate_circle(
     return img
 
 def main():
-    path_to_videos = 'D:\\physics_lab_videos\\day3\\'
+    path_to_videos = 'CHANGE ME TO A PATH TO YOUR VIDEOS' # CHANGE THIS!!!
+
+    # Make sure you have these folders created!
     unparsed_dir_path = os.path.join(path_to_videos, 'unparsed')
     parsed_dir_path = os.path.join(path_to_videos, 'parsed')
     data_dir_path = os.path.join(path_to_videos, 'data')
 
+    # Example:
     file_names_and_frame_ranges = {
-        'day_3_35p_wo_take_1_26.2-26.4_.avi': ['all'],
-        # 'day_3_35p_wo_take_1_29.8-35_.avi': ['all'],
-        # 'day_3_35p_wo_take_1_45.avi': ['all'],
-        # 'day_3_35p_wo_take_1_55.avi': [[1,300], [350,1450]],
-        # 'day_3_35p_wo_take_1_65.avi': [[1,1015], [1077,1450]],
-        # 'day_3_35p_wo_take_1_75.avi': [[1,278],[320,690],[750,1310]],
-        # 'day_3_35p_wo_take_1_85.avi': [[50,550],[695,850],[880,1350]],
-        # 'day_3_35p_wo_take_1_95.avi': ['all'],
-        # 'day_3_35p_wo_take_1_100.avi': [[1,740], [918,1280]],
+        'day_3_35p_wo_take_1_26.2-26.4_.avi': ['all'], # Will go over all of the video
+        'day_3_35p_wo_take_1_55.avi': [[1,300], [350,1450]], # Will go over only those frame ranges of the following video
     }
-    # file_names_and_frame_ranges = {
-    #     '20percent_with_oil.avi': ['all'],
-    #     '35percent_with_oil.avi': ['all'],
-    #     '50percent_with_oil.avi': ['all'],
-    #     '50percent_with_oil3.avi': ['all'],
-    #     '50percent_with_oil_2.avi': ['all'],
-    #     '85percent_with_oil.avi': ['all'],
-    # }
     for path in file_names_and_frame_ranges:
         vid_path = os.path.join(unparsed_dir_path, path)
         parsed_path = os.path.join(parsed_dir_path, path.split('.')[0] + '_parsed.avi')
